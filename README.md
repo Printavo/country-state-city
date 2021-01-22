@@ -1,44 +1,44 @@
-country-state-city
+country-state
 ==============================
-Basic library for Country, State and City
+Basic library for Country and State
 
 Data Source:<br>
 https://github.com/dr5hn/countries-states-cities-database<br>
 For any data related issue, you can raise a Issue [here](https://github.com/dr5hn/countries-states-cities-database/issues/new).
 
 # Install
-`npm i country-state-city`
+`npm i country-state`
 
 # Usage
 
 ## Latest Release : `v2.0.0` (Major Version Release - Not backward compatible)
   - ES6 Module usage
-   
+
      ```js
-     import csc from 'country-state-city'
+     import csc from 'country-state'
 
      // Import Interfaces`
-     import { ICountry, IState, ICity } from 'country-state-city'
+     import { ICountry, IState } from 'country-state'
      ```
   - AMD Module usage
-  
+
     ```js
-    let csc = require('country-state-city').default
+    let csc = require('country-state').default
     ```
 
 
 ## For versions `v0.1.8 and below`
 
   - ES6 Module usage
-   
+
      ```js
-     import csc from 'country-state-city'
+     import csc from 'country-state'
      ```
 
   - AMD Module usage
-  
+
     ```js
-    let csc = require('country-state-city')
+    let csc = require('country-state')
     ```
 
 # Docs
@@ -90,46 +90,6 @@ type: **array of json | IState**
 ]
 
 ```
-getCitiesOfState(countryCode, stateCode)
----------------
-
-It accepts a valid `CountryCode`, `StateCode` and returns *all Cities* as Array of JSON
-
-type: **array of json | ICity**
-
-```js
-[
-	{
-		"name": "New Delhi",
-		"countryCode": "IN",
-		"stateCode": "DL",
-		"latitude": "28.63576000",
-		"longitude": "77.22445000"
-	}
-]
-
-```
-
-getCitiesOfCountry(countryCode)
----------------
-
-It accepts a valid `CountryCode` and returns *all Cities* as Array of JSON
-
-type: **array of json | ICity**
-
-```js
-[
-	{
-		"name": "New Delhi",
-		"countryCode": "IN",
-		"stateCode": "DL",
-		"latitude": "28.63576000",
-		"longitude": "77.22445000"
-	}
-]
-
-```
-
 getAllCountries
 ---------------
 It returns **all Countries**
@@ -178,24 +138,6 @@ type: **array of json | IState**
 ]
 ```
 
-getAllCities
----------------
-It returns **all Cities**
-
-type: **array of json | ICity**
-
-```js
-[
-	{
-		"name": "Delhi",
-		"isoCode": "DL",
-		"countryCode": "IN",
-		"latitude": "28.70405920",
-		"longitude": "77.10249020"
-	}
-]
-```
-
 Special Thanks
 ---------------
 
@@ -209,7 +151,7 @@ Change Logs
 
 1. Not backward compatible with previous versions.
 2. New and updated API functions.
-3. Removed proprietor Indexed Id's for uniquely identifying Country, State, City. Instead now using standard isoCodes.
+3. Removed proprietor Indexed Id's for uniquely identifying Country and State. Instead now using standard isoCodes.
 4. Data taken from more robust and accurate database.
 5. Countries with their respective flags, isoCode, currencies, latitude, longitude & timezones.
 6. States & cities with their latitude & longitude.
@@ -224,9 +166,9 @@ Change Logs
 7. Common Test Cases are being shared between AMD and ES6 modules test files.
 
 **v0.1.8** :: [Data Source (hiiamrohit)](https://github.com/hiiamrohit/Countries-States-Cities-database)
-1. Development code - Javascript to Typescript conversion: [#12](https://github.com/harpreetkhalsagtbit/country-state-city/pull/12)
+1. Development code - Javascript to Typescript conversion: [#12](https://github.com/harpreetkhalsagtbit/country-state/pull/12)
 
 **v0.1.0**
-1. Fix: [#2](https://github.com/harpreetkhalsagtbit/country-state-city/issues/2)
-2. Fix: [#3](https://github.com/harpreetkhalsagtbit/country-state-city/issues/3)
+1. Fix: [#2](https://github.com/harpreetkhalsagtbit/country-state/issues/2)
+2. Fix: [#3](https://github.com/harpreetkhalsagtbit/country-state/issues/3)
 3. Added some missing states and cities for Canada and US
