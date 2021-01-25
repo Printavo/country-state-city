@@ -9,9 +9,9 @@ const _findEntryByCode = (source: any, code: string) => {
 		const codex = source.findIndex((c: any) => {
 			return c.isoCode === code;
 		});
-		return codex !== -1 ? source[codex] : '';
+		return codex !== -1 ? source[codex] : null;
 	}
-	return '';
+	return null;
 };
 
 const compare = (a: any, b: any) => {
@@ -33,10 +33,14 @@ export default {
 	getAllStates(): IState[] {
 		return stateList;
 	},
-	getCountryByCode(isoCode: string): ICountry {
+	getCountryByCode(isoCode: string): ICountry | null {
 		return _findEntryByCode(countryList, isoCode);
 	},
-	getStateByCode(isoCode: string): IState {
-		return _findEntryByCode(stateList, isoCode);
+	getStateByCode(isoCode: string, countryCode: string): IState | null {
+		const states = stateList.filter((value) => {
+			return value.countryCode === countryCode;
+		}).sort(compare);
+
+		return _findEntryByCode(states, isoCode);
 	},
 };
